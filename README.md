@@ -1,0 +1,4 @@
+== README
+
+Example Rails app
+
