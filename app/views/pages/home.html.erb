@@ -1,14 +1,5 @@
 
 
-
-<body>
-<div id="content" class="container">
-    <header id="content-header">
-        <div id="price-container">
-          <span class="glyphicon glyphicon-tag"></span><span class="price">$4.99</span>
-        </div>
-        <img id="content-header-img" src="img/header-image.jpg" alt="Learn Growth Hacking">
-    </header>
     <section id="content-details" class="row clearfix">
         <article id="details-article" class="col-sm-8">
             <h1 id="article-title">Growth Hacking <span class="font-weight-light">Crash Course</span></h1>
@@ -27,6 +18,21 @@
         </article>
         <aside id="details-aside" class="col-sm-4">
             <a id="btn-buy" href="receipt.html" class="btn btn-success btn-lg btn-block"><span class="glyphicon glyphicon-ok"></span>I want this!</a>
+
+          <%= form_tag charges_path do %>
+              <article>
+                <label class="amount">
+                  <span>Amount: $5.00</span>
+                </label>
+               </article>
+
+                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                    data-description="A month's subscription"
+                    data-amount="500"></script>
+                <% end %>
+
+
             <ul id="details-infobox" class="list-group">
               <li class="list-group-item active clearfix">DETAILS</li>
               <li class="list-group-item">You'll get one video</li>
@@ -39,7 +45,8 @@
     </section>
 </div>
 <footer id="site-footer">
-Made by <a href="http://onemonth.com" target="_blank"><img id="one-month-footer-logo" src="img/one-month-logo.svg" alt="One Month"></a>
+Made by <a href="http://onemonth.com" target="_blank">
+<%= image_tag('one-month-logo.svg', id: 'one-month-footer-logo', alt: 'One Month') %>
 </footer>
 
 <!-- Modal -->
@@ -58,7 +65,7 @@ Made by <a href="http://onemonth.com" target="_blank"><img id="one-month-footer-
                 <p>Follow me on Twitter <a href="https://twitter.com/mattangriffel" target="_blank">@mattangriffel</a></p>
             </div>
             <div id="modal-right" class="pull-right">
-                <img src="img/teacher-image.jpg" alt="Mattan Griffel">
+                <%= image_tag('teacher-image.jpg', alt: 'Mattan Griffel') %>
             </div>
       </div>
       <div class="modal-footer">
@@ -66,8 +73,5 @@ Made by <a href="http://onemonth.com" target="_blank"><img id="one-month-footer-
       </div>
     </div>
   </div>
-</div>
 
-<!-- Scripts -->
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="js/lib/bootstrap.min.js"></script>
+

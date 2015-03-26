@@ -1,14 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>Railsapp</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+   <link rel="stylesheet" href="css/lib/bootstrap.min.css">
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300,800' >
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
+  <div id="content" class="container">
+    <header id="content-header">
+        <div id="price-container">
+          <span class="glyphicon glyphicon-tag"></span>
+          <span class="price">$4.99</span>
+        </div>
+        <%= image_tag('header-image.jpg', id: 'content-header-img', alt: 'learn Growth hacking') %>
+    </header>
+
 <%= yield %>
+
+  </div>
 
 </body>
 </html>
+
+
