@@ -32,3 +32,9 @@ gem 'figaro'
 #Add letter opener for handling email in development
 gem 'letter_opener', group: :development
 
+# Add ActiveAdmin to generate and admin interface
+gem 'activeadmin', github: 'gregbell/active_admin'
+
+# Add Devise to support login for activeAdmin
+gem 'devise'
+
