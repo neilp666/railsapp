@@ -29,3 +29,6 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 #figaro 
 gem 'figaro'
 
+#Add letter opener for handling email in development
+gem 'letter_opener', group: :development
+
